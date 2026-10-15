@@ -1,4 +1,4 @@
-# AuraFixFall
+# PromptForgeFixFall
 
 Automatically rescues players who fall under the map, with a `/fixfall` command as a manual backup.
 
