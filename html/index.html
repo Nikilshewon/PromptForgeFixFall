@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="s-power" viewBox="0 0 24 24"><path d="M12 3v8M6.3 6.8a8 8 0 1 0 11.4 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="s-fuel" viewBox="0 0 24 24"><path d="M5 20V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v15M4 20h12M8 8h4M15 9h2a2 2 0 0 1 2 2v5a1.5 1.5 0 0 0 3 0V8l-3-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="s-engine" viewBox="0 0 24 24"><path d="M3 10h2V8h3V6h6l1.5 2H19v3h2v4h-2v3H8.5L6 16H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="s-seat" viewBox="0 0 24 24"><path d="M7 4l1.3 9h7.2a2 2 0 0 1 2 2v5h-2.2v-3.5H7.6a2 2 0 0 1-2-1.7L4.3 5A1 1 0 0 1 5.3 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="s-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</svg>
+
+<div id="dock" class="dock hidden">
+  <button id="close" class="x" title="Close"><svg><use href="#s-close"/></svg></button>
+
+  <section class="col">
+    <h4>Status</h4>
+    <div class="meter">
+      <div class="row"><span><svg><use href="#s-fuel"/></svg>Fuel</span><b id="fuelV">0%</b></div>
+      <div class="bar"><i id="fuelB"></i></div>
+    </div>
+    <div class="meter">
+      <div class="row"><span><svg><use href="#s-engine"/></svg>Engine health</span><b id="hpV">0%</b></div>
+      <div class="bar"><i id="hpB"></i></div>
+    </div>
+    <button id="engine" class="eng">
+      <svg><use href="#s-power"/></svg>
+      <span><b id="engT">Engine off</b><small id="engS">Tap to start</small></span>
+    </button>
+  </section>
+
+  <section class="col car">
+    <h4>Doors</h4>
+    <svg viewBox="0 0 120 240" class="carsvg">
+      <rect x="24" y="12" width="72" height="216" rx="30" class="body"/>
+      <path d="M36 74h48l-4 36H40z" class="glassp"/>
+      <path d="M40 150h40l4 22H36z" class="glassp"/>
+      <rect x="34" y="22" width="52" height="46" rx="14" class="part hood" data-door="4"><title>Hood</title></rect>
+      <rect x="34" y="178" width="52" height="40" rx="12" class="part trunk" data-door="5"><title>Trunk</title></rect>
+      <rect x="12" y="78" width="12" height="40" rx="4" class="part d-l" data-door="0"><title>Front left door</title></rect>
+      <rect x="12" y="122" width="12" height="38" rx="4" class="part d-l" data-door="2"><title>Rear left door</title></rect>
+      <rect x="96" y="78" width="12" height="40" rx="4" class="part d-r" data-door="1"><title>Front right door</title></rect>
+      <rect x="96" y="122" width="12" height="38" rx="4" class="part d-r" data-door="3"><title>Rear right door</title></rect>
+    </svg>
+  </section>
+
+  <section class="col">
+    <div class="head"><h4>Windows</h4><button id="winAll" class="mini">All</button></div>
+    <div id="wins" class="wins"></div>
+    <h4 class="gap">Seats</h4>
+    <div id="seats" class="seats"></div>
+  </section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
